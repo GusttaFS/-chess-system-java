@@ -17,8 +17,8 @@ public class ChessMatch {
 	
 	public ChessPiece[][] getePieces() {
 		ChessPiece[][] matriz = new ChessPiece[board.getRows()][board.getColumns()];
-		for (int i=0; i<board.getRows(); i++) {
-			for (int j=0; j<board.getColumns(); j++) {
+		for (int i = 0; i < board.getRows(); i++) {
+			for (int j = 0; j < board.getColumns(); j++) {
 				matriz[i][j] = (ChessPiece) board.piece(i, j);
 			}
 		} return matriz;
@@ -31,9 +31,19 @@ public class ChessMatch {
 	
 	
 	private void initialSetup() {
-		this.placeNewPiece('b', 6, new Rook(board, Color.WHITE));
-		this.placeNewPiece('e', 8, new King(board, Color.BLACK));
-		this.placeNewPiece('e', 1, new King(board, Color.WHITE));
+		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('d', 1, new King(board, Color.WHITE));
+
+        placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('e', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('d', 8, new King(board, Color.BLACK));
 	}
 	
 }
