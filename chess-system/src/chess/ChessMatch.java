@@ -18,7 +18,7 @@ public class ChessMatch {
 	}
 	
 	
-	public ChessPiece[][] getePieces() {
+	public ChessPiece[][] getPieces() {
 		ChessPiece[][] matriz = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i = 0; i < board.getRows(); i++) {
 			for (int j = 0; j < board.getColumns(); j++) {
@@ -27,6 +27,14 @@ public class ChessMatch {
 		} return matriz;
 	}
 	
+
+
+	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+		Position position = sourcePosition.toPosition();
+		this.validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+
 
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
